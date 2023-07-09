@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'shared/sharedLayout';
 import Movies from '../pages/movies';
 import Home from '../pages/home';
+import 'modern-normalize/modern-normalize.css';
 
 export const App = () => {
   return (
