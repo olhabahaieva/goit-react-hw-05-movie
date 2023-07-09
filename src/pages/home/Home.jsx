@@ -31,6 +31,7 @@ const Home = () => {
 
   return (
     <div className={css.marginTop}>
+        <h1 className={css.title}>Trending today</h1>
       {movies.length > 0 && <MovieList movies={movies}/>}
     </div>
   );
