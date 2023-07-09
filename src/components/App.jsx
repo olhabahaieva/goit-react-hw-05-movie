@@ -10,7 +10,7 @@ export const App = () => {
       <div
         style={{
           height: '100vh',
-          display: 'flex',
+          // display: 'flex',
           flexWrap: 'wrap',
           // justifyContent: 'center',
           // alignItems: 'center',

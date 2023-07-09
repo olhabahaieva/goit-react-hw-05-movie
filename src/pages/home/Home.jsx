@@ -1,6 +1,7 @@
 import { getTrendingMovies } from 'shared/APIs/trendingMoviesAPI';
 import { useEffect, useState } from 'react';
 import MovieList from 'components/movieList/MovieList';
+import css from './Home.module.css'
 
 const Home = () => {
   // eslint-disable-next-line
@@ -29,7 +30,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className={css.marginTop}>
       {movies.length > 0 && <MovieList movies={movies}/>}
     </div>
   );
