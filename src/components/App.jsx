@@ -1,7 +1,3 @@
-import { getMovieBySearch } from "shared/APIs/movieBySearch";
-
-getMovieBySearch()
-
 export const App = () => {
   return (
     <div
