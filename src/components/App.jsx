@@ -14,7 +14,7 @@ export const App = () => {
           flexWrap: 'wrap',
           // justifyContent: 'center',
           // alignItems: 'center',
-          fontSize: 40,
+          fontSize: 18,
           color: '#010101',
         }}
       >
