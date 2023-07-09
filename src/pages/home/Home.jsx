@@ -17,15 +17,16 @@ const Home = () => {
         setError(false);
         const fetchedMovies = await getTrendingMovies();
         setMovies(fetchedMovies);
+        console.log(fetchedMovies)
       } catch (error) {
-        setError(error);
+        setError(true);
       } finally {
         setLoading(false);
       }
     }
 
     getMovies();
-  });
+  }, []);
 
   return (
     <>
