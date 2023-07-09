@@ -1,3 +1,7 @@
+import { getTrendingMovies } from "shared/APIs/trendingMoviesAPI";
+
+getTrendingMovies()
+
 export const App = () => {
   return (
     <div
