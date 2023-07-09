@@ -1,6 +1,6 @@
 import { getTrendingMovies } from 'shared/APIs/trendingMoviesAPI';
-// import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import MovieList from 'components/movieList/MovieList';
 
 const Home = () => {
   // eslint-disable-next-line
@@ -29,9 +29,9 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <ul></ul>
-    </>
+    <div>
+      {movies.length > 0 && <MovieList movies={movies}/>}
+    </div>
   );
 };
 
