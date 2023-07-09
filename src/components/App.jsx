@@ -1,6 +1,6 @@
-import { getTrendingMovies } from "shared/APIs/trendingMoviesAPI";
+import { getMovieBySearch } from "shared/APIs/movieBySearch";
 
-getTrendingMovies()
+getMovieBySearch()
 
 export const App = () => {
   return (
