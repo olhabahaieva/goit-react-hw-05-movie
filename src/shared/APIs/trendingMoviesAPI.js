@@ -9,6 +9,7 @@ export async function getTrendingMovies() {
     const response = await axios.get(
       `${BASE_URL}trending/all/day?api_key=${API_KEY}`
     );
+    // console.log(response.data.results);
     return response.data.results;
   } catch (error) {
     console.log(error);
