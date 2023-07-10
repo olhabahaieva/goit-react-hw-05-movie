@@ -7,11 +7,10 @@ const API_KEY = 'df510edfce68ed3b1f6165b74448260e';
 export async function getTrendingMovies() {
   try {
     const controller = new AbortController()
-    const signal = controller.signal;
     
     const response = await axios.get(
       `${BASE_URL}trending/all/day?api_key=${API_KEY}`,
-      { signal } // Pass the signal to the request
+      {signal: controller.signal},
     );
     // console.log(response.data.results);
     return response.data.results;
