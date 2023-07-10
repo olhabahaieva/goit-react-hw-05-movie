@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import css from './Header.module.css';
 
@@ -7,12 +7,18 @@ const Header = () => {
     <>
       <header className={css.header}>
         <nav className={css.nav}>
-          <Link className={css.link} to="/">
-            Home
-          </Link>
-          <Link className={css.link} to="/movies">
-            Movies
-          </Link>
+         <ul>
+           <li>
+              <NavLink className={css.link} to="/">
+                Home
+              </NavLink>
+           </li>
+            <li>
+              <NavLink className={css.link} to="/movies">
+                Movies
+              </NavLink>
+            </li>
+         </ul>
         </nav>
       </header>
       <Outlet />
