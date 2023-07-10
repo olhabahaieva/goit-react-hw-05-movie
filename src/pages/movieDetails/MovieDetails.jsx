@@ -12,6 +12,7 @@ function MovieDetails() {
       try {
         const fetchedMovie = getMovieDetails(movieId);
         setMovie(fetchedMovie);
+        console.log(fetchedMovie)
       } catch (error) {}
     }
     getMovie();
