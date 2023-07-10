@@ -1,7 +1,7 @@
 import { getTrendingMovies } from 'shared/APIs/trendingMoviesAPI';
 import { useEffect, useState } from 'react';
 import MovieList from 'components/movieList/MovieList';
-import css from './Home.module.css'
+import css from './Home.module.css';
 
 const Home = () => {
   // eslint-disable-next-line
@@ -12,11 +12,12 @@ const Home = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    const controller = new AbortController();
     async function getMovies() {
       try {
         setLoading(true);
         setError(false);
-        const fetchedMovies = await getTrendingMovies();
+        const fetchedMovies = await getTrendingMovies(controller.signal);
         setMovies(fetchedMovies);
         // console.log(fetchedMovies)
       } catch (error) {
@@ -27,12 +28,14 @@ const Home = () => {
     }
 
     getMovies();
+
+    return () => controller.abort();
   }, []);
 
   return (
     <div className={css.marginTop}>
-        <h1 className={css.title}>Trending today</h1>
-      {movies.length > 0 && <MovieList movies={movies}/>}
+      <h1 className={css.title}>Trending today</h1>
+      {movies.length > 0 && <MovieList movies={movies} />}
     </div>
   );
 };
