@@ -1,4 +1,12 @@
-const Movies = ()=>{
-    return <h1>Test</h1>
-}
+import css from './Movies.module.css';
+
+const Movies = () => {
+  return (
+    <form className={css.marginTop} action="">
+      <label htmlFor="search"></label>
+      <input type="text" name="search" id="search"/>
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
 export default Movies;
