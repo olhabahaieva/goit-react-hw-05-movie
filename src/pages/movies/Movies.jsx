@@ -5,7 +5,7 @@ const Movies = () => {
     <form className={css.marginTop} action="">
       <label htmlFor="search"></label>
       <input type="text" name="search" id="search"/>
-      <button type="submit">Submit</button>
+      <button type="submit">Search</button>
     </form>
   );
 };
