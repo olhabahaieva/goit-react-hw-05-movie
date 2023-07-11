@@ -1,14 +1,20 @@
-import axios from "axios";
+import axios from 'axios';
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = 'df510edfce68ed3b1f6165b74448260e';
 
-export async function getMovieDetails(movieId){
-    await axios.request(`${BASE_URL}/search/movie/${movieId}?api_key=${API_KEY}`)
-    .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+export async function getMovieDetails(movieId) {
+  try {
+    const controller = new AbortController();
+    const response = await axios.get(
+      `${BASE_URL}/search/movie/${movieId}?api_key=${API_KEY}`,
+      { signal: controller.signal }
+    );
+
+    console.log(response.data.results);
+    return response.data.results;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
 }
