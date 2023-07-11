@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-export const MovieDetails = () => {
+export const MovieDetails = ({movie, onClick}) => {
   return (
-    <div>MovieDetails</div>
+    <Link to={`${movie.id}`}>{movie.title || movie.name}</Link>
   )
 }
 

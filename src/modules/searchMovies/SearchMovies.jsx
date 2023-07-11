@@ -31,7 +31,7 @@ const SearchMovies = () => {
     return () => controller.abort();
   }, [target]);
 
-  return <>{movies.length > 0 && <MovieList movies={movies} />}</>;
+  return <>{movies.length > 0 && <MovieList movies={movies}/>}</>;
 };
 
 export default SearchMovies;
