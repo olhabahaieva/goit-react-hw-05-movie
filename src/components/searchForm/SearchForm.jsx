@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import css from './SearchForm';
 
 const SearchForm = ({ onSubmit }) => {
+  console.log(onSubmit)
   const [state, setState] = useState({ search: '' });
 
   const handleChange = ({ target }) => {
