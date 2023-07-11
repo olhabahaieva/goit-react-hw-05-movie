@@ -1,36 +1,45 @@
-import React, { useState } from 'react';
-import css from './SearchForm';
+import React, { useEffect, useRef, useState } from 'react';
+import MovieList from 'components/movieList/MovieList';
+import { getMovieBySearch } from 'shared/APIs/movieBySearch';
 
-const SearchForm = ({ onSubmit }) => {
-  console.log(onSubmit)
-  const [state, setState] = useState({ search: '' });
+const SearchMovies = () => {
+  const searchRef = useRef(null);
+  const [movies, setMovies] = useState([]);
+  // eslint-disable-next-line
+  const [loading, setLoading] = useState(false);
+  // eslint-disable-next-line
+  const [error, setError] = useState(false);
 
-  const handleChange = ({ target }) => {
-    const { value, name } = target;
-    setState(prevState => {
-      return { ...prevState, [name]: value };
-    });
-  };
+  useEffect(() => {
+    const controller = new AbortController();
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    onSubmit(state.search.trim());
-    setState({ search: '' });
-  };
-  const { search } = state;
+    const getMovies = async () => {
+      try {
+        setLoading(true);
+        setError(false);
+        const target = searchRef.current.value;
+        const fetchedMovies = await getMovieBySearch(target);
+        setMovies(fetchedMovies);
+      } catch (error) {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getMovies();
+
+    return () => controller.abort();
+  }, []);
+
   return (
-    <form className={css.marginTop} action="" onSubmit={handleSubmit}>
+    <form onSubmit={(e) => e.preventDefault()}>
       <label htmlFor="search"></label>
-      <input 
-      onChange={handleChange} 
-      type="text" 
-      name="search" 
-      id="search"
-      value={search}
-      placeholder="type movie name..." />
-      <button type="submit">Search</button>
+      <input type="text" name="search" id="search" ref={searchRef} />
+      <button type="submit">Submit</button>
+      {movies.length > 0 && <MovieList movies={movies} />}
     </form>
   );
 };
 
-export default SearchForm;
+export default SearchMovies;
