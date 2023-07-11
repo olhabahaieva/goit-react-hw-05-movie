@@ -27,7 +27,7 @@ const SearchMovies = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="search">Search:</label>
+      <label htmlFor="search"></label>
       <input type="text" name="search" id="search" ref={searchRef} />
       <button type="submit">Submit</button>
       {movies.length > 0 && <MovieList movies={movies} />}
