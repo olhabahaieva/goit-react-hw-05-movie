@@ -2,12 +2,11 @@ import SearchForm from 'components/searchForm/SearchForm';
 import SearchMovies from 'modules/searchMovies/SearchMovies';
 import React from 'react';
 
-export const Movies = () => {
- 
+export const Movies = (movies, target) => {
   return (
     <>
       <SearchForm />
-      <SearchMovies />
+      {movies === target && <SearchMovies />}
     </>
   );
 };
