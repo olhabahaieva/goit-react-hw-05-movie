@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import css from './Movies.module.css';
 import { getMovieBySearch } from 'shared/APIs/movieBySearch';
 import { useParams } from 'react-router-dom';
-import { MovieInfo } from 'pages/movieInfo/MovieInfo';
+import MovieDetails from 'pages/movieDetails/MovieDetails';
 
 
 const Movies = () => {
@@ -46,7 +46,7 @@ const Movies = () => {
       <input onChange={onChange} type="text" name="search" id="search" />
       <button onClick={handleButtonClick} type="submit">Search</button>
     </form>
-    {movie && !loading && <MovieInfo movie={movie}/>}
+    {movie && !loading && <MovieDetails movie={movie}/>}
     </>
   );
 };
