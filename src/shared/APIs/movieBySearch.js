@@ -9,7 +9,7 @@ export async function getMovieBySearch(params){
     const response = await axios.request(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${params}`,
     { signal: controller.signal }
     )
-    console.log(response.data.results);
+    // console.log(response.data.results);
     return response.data.results;
   } catch (error) {
     
