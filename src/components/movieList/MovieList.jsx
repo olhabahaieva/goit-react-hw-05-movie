@@ -15,7 +15,6 @@ const MovieList = ({ movies }) => {
   const filteredMovies = movies.filter(movie => movie.title);
   const target = openRef.current;
   const onClick = async => {
-    // const target = openRef.current;
     try {
       setLoading(true);
       setError(false);
@@ -32,10 +31,10 @@ const MovieList = ({ movies }) => {
     <ul>
       {filteredMovies.map(movie => (
         <li key={movie.id}>
-          <Link onClick={onClick} to={`/movies/${movie.id}`}>{movie.title}</Link>
-          <MovieDetails movie={movie}>
-           {console.log(movie)}
-          </MovieDetails>
+          <Link onClick={onClick} to={`/movies/${movie.id}`}>
+            {movie.title}
+          </Link>
+          <MovieDetails movie={movie}>{console.log(movie)}</MovieDetails>
         </li>
       ))}
     </ul>
