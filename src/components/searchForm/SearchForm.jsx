@@ -30,6 +30,8 @@ const SearchMovies = () => {
       <label htmlFor="search"></label>
       <input type="text" name="search" id="search" ref={searchRef} />
       <button type="submit">Submit</button>
+      {error && <p>Sorry, something went wrong</p>}
+      {loading && <p>Data is loading</p>}
       {movies.length > 0 && <MovieList movies={movies} />}
     </form>
   );

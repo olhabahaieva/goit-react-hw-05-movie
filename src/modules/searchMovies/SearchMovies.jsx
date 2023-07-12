@@ -33,7 +33,7 @@ const SearchMovies = () => {
 
   return (
     <>
-      {error & <p>Sorry, something went wrong</p>}
+      {error && <p>Sorry, something went wrong</p>}
       {loading && <p>Data is loading</p>}
       {movies.length > 0 && <MovieList movies={movies} />}
     </>

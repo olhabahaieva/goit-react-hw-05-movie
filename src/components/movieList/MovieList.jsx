@@ -29,6 +29,8 @@ const MovieList = ({ movies }) => {
 
   return (
     <ul>
+      {error && <p>Sorry, something went wrong</p>}
+      {loading && <p>Data is loading</p>}
       {filteredMovies.map(movie => (
         <li key={movie.id}>
           <Link onClick={onClick} to={`${movie.id}`}>
