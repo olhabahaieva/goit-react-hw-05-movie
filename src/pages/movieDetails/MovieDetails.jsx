@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const MovieDetails = ({ movie, onClick }) => {
+export const MovieDetails = ({ movie }) => {
   console.log(movie);
   return (
     <div>
       <div>
+        <img src={movie.poster_path} alt={movie.title} />
+        {console.log(movie.poster_path)}
         <h1>{movie.title}</h1>
         <p>{movie.vote_average}</p>
         <p>Overview</p>
