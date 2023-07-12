@@ -31,7 +31,13 @@ const SearchMovies = () => {
     return () => controller.abort();
   }, [target]);
 
-  return <>{movies.length > 0 && <MovieList movies={movies}/>}</>;
+  return (
+    <>
+      {error & <p>Sorry, something went wrong</p>}
+      {loading && <p>Data is loading</p>}
+      {movies.length > 0 && <MovieList movies={movies} />}
+    </>
+  );
 };
 
 export default SearchMovies;
