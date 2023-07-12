@@ -35,6 +35,8 @@ const TrendingMovieList = () => {
   return (
     <div className={css.marginTop}>
       <h1 className={css.title}>Trending today</h1>
+      {error & <p>Sorry, something went wrong</p>}
+      {loading && <p>Data is loading</p>}
       {movies.length > 0 && <MovieList movies={movies} />}
     </div>
   );
