@@ -1,28 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import MovieInfo from 'components/movieInfo/MovieDetails';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getMovieDetails } from 'shared/APIs/movieDetailsAPI';
 
-export const MovieDetails = ({ movie }) => {
+export const MovieDetails = () => {
   // console.log(movie);
-  return (
-    <div>
-      <div>
-        <img src={movie.poster_path} alt={movie.title} />
+  const { movieId } = useParams();
+  const [movie, setMovie] = useState(null);
 
-        <h1>{movie.title}</h1>
-        <p>{movie.vote_average}</p>
-        <p>Overview</p>
-        <p>{movie.overview}</p>
-        <p>Genres</p>
-        <p>{movie.genre_ids}</p>
-      </div>
+  useEffect(() => {
+    async function getMovie() {
+      try {
+        const fetchedMovie = await getMovieDetails(movieId);
+        setMovie(fetchedMovie);
+      } catch (error) {}
+    }
+    getMovie();
+  }, [movieId]);
 
-      <div>
-        <p>Additional Information</p>
-        <Link to="/cast">Cast</Link>
-        <Link to="/reviews">Reviews</Link>
-      </div>
-    </div>
-  );
+  return <div>{movie && <MovieInfo movie={movie} />}</div>;
 };
 
 export default MovieDetails;
