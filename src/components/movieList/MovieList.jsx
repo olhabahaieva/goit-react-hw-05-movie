@@ -1,3 +1,4 @@
+import MovieDetails from 'pages/movieDetails/MovieDetails';
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getMovieDetails } from 'shared/APIs/movieDetailsAPI';
@@ -31,10 +32,10 @@ const MovieList = ({ movies }) => {
     <ul>
       {filteredMovies.map(movie => (
         <li key={movie.id}>
-          <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
-          {/* <MovieDetails onClick={onClick} movie={movie}>
+          <Link onClick={onClick} to={`/movie/${movie.id}`}>{movie.title}</Link>
+          <MovieDetails movie={movie}>
            {console.log(movie)}
-          </MovieDetails> */}
+          </MovieDetails>
         </li>
       ))}
     </ul>
