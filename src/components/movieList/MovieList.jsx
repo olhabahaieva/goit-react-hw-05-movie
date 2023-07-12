@@ -34,7 +34,7 @@ const MovieList = ({ movies }) => {
           <Link onClick={onClick} to={`/movies/${movie.id}`}>
             {movie.title}
           </Link>
-          <MovieDetails movie={movie}>{console.log(movie)}</MovieDetails>
+          <MovieDetails movie={movie}></MovieDetails>
         </li>
       ))}
     </ul>
