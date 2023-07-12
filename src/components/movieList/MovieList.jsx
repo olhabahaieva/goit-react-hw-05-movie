@@ -31,7 +31,7 @@ const MovieList = ({ movies }) => {
     <ul>
       {filteredMovies.map(movie => (
         <li key={movie.id}>
-          <Link onClick={onClick} to={`/movies/${movie.id}`}>
+          <Link onClick={onClick} to={`${movie.id}`}>
             {movie.title}
           </Link>
           <MovieDetails movie={movie}></MovieDetails>
