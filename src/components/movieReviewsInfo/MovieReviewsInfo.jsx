@@ -1,10 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-const MovieReviewsInfo = ({movie}) => {
-  console.log(movie)
+const MovieReviewsInfo = ({ movie }) => {
+  console.log(movie);
   return (
-    <div>MovieReviewsInfo</div>
-  )
-}
+    <ul>
+      {movie.map(el => (
+        <li key={el.id}>
+          <p>{el.author}</p>
+          <p>{el.content}</p>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export default MovieReviewsInfo;
