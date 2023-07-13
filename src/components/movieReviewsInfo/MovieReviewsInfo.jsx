@@ -2,7 +2,7 @@ import React from 'react';
 import css from './MovieReviews.module.css';
 
 const MovieReviewsInfo = ({ movie }) => {
-  console.log(movie);
+  // console.log(movie);
   return (
     <ul className={css.list}>
       {movie.map(el => (
