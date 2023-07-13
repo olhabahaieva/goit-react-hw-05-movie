@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-export const MovieCastInfo = () => {
+export const MovieCastInfo = ({ movie }) => {
+  //   console.log(movie)
+  const castActors = movie.cast;
+  console.log(castActors);
+
   return (
-    <div>MovieCastInfo</div>
-  )
-}
+    <ul>
+      {castActors.map(el => (
+        <li key={movie.id}>{el.name}</li>
+      ))}
+    </ul>
+  );
+};
 
 export default MovieCastInfo;
