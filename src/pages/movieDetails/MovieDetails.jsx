@@ -1,4 +1,4 @@
-import MovieInfo from 'components/movieInfo/MovieInfo';
+import MovieInfo from 'components/movieInfo';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import getMovieDetails from 'shared/APIs/movieDetailsAPI';
@@ -25,10 +25,13 @@ export const MovieDetails = () => {
     getMovie();
   }, [movieId]);
  
-  return <div>
-    <button type="button" onClick={goBack} text="Go Back">Go Back</button>
-    {movie && <MovieInfo movie={movie} />} {console.log(movie)}
-    </div>;
+  return (
+    <div>
+      <button type="button" onClick={goBack} text="Go Back">Go Back</button>
+      {movie && <MovieInfo movie={movie} />}
+    </div>
+  );
+  
 };
 
 export default MovieDetails;
