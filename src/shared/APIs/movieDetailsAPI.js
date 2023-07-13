@@ -11,8 +11,8 @@ async function getMovieDetails(movieId) {
       // { signal: controller.signal }
     );
 
-    console.log(response.data.results);
-    return response.data.results;
+    console.log(response.data);
+    return response.data;
   } catch (error) {
     console.log(error);
     throw error;
