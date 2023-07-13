@@ -5,10 +5,10 @@ const API_KEY = 'df510edfce68ed3b1f6165b74448260e';
 
 export async function getMovieDetails(movieId) {
   try {
-    const controller = new AbortController();
+    // const controller = new AbortController();
     const response = await axios.get(
-      `${BASE_URL}/search/${movieId}?api_key=${API_KEY}`,
-      { signal: controller.signal }
+      `${BASE_URL}/search/movie/${movieId}?api_key=${API_KEY}`,
+      // { signal: controller.signal }
     );
 
     console.log(response.data.results);
