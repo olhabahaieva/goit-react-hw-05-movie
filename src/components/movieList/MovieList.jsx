@@ -1,8 +1,6 @@
-import MovieDetails from 'pages/movieDetails/MovieDetails';
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import getMovieDetails from 'shared/APIs/movieDetailsAPI';
-
 
 const MovieList = ({ movies }) => {
   const openRef = useRef(null);
@@ -37,7 +35,6 @@ const MovieList = ({ movies }) => {
           <Link onClick={onClick} to={`${movie.id}`}>
             {movie.title}
           </Link>
-          <MovieDetails movie={movie}></MovieDetails>
         </li>
       ))}
     </ul>
