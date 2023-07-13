@@ -13,7 +13,7 @@ export const MovieInfo = ({ movie }) => {
   };
 
   const handleShowMovieReviews = () =>{
-    setShowMovieReviews((prevshowMovieReviews)=> !showMovieReviews);
+    setShowMovieReviews((prevshowMovieReviews)=> !prevshowMovieReviews);
   };
 
   return (
