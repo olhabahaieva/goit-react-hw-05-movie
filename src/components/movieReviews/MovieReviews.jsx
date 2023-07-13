@@ -5,8 +5,8 @@ import MovieReviewsInfo from 'components/movieReviewsInfo/MovieReviewsInfo';
 
 export const MovieReviews = () => {
   const [movie, setMovie] = useState();
-  const { movieId } = useParams;
-  
+  const { movieId } = useParams();
+//   console.log({ movieId })
   useEffect(() => {
     async function getReviews() {
       try {
