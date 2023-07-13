@@ -1,4 +1,4 @@
-import MovieInfo from 'components/movieInfo/MovieDetails';
+import MovieInfo from 'components/movieInfo/MovieInfo';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieDetails } from 'shared/APIs/movieDetailsAPI';
