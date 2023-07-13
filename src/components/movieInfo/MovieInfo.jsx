@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import css from './MovieInfo.module.css';
 import MovieCast from 'components/movieCast/MovieCast';
+import MovieReviews from 'components/movieReviews/MovieReviews';
 
 export const MovieInfo = ({ movie }) => {
   const [showMovieCast, setShowMovieCast] = useState(false);
+  const[showMovieReviews, setShowMovieReviews] = useState(false);
 
   const handleShowMovieCast = () => {
     setShowMovieCast((prevShowMovieCast) => !prevShowMovieCast);
+  };
+
+  const handleShowMovieReviews = () =>{
+    setShowMovieReviews((prevshowMovieReviews)=> !showMovieReviews);
   };
 
   return (
@@ -35,9 +41,10 @@ export const MovieInfo = ({ movie }) => {
         <div className={css.line}></div>
         <p>Additional Information</p>
         <Link onClick={handleShowMovieCast}>Cast</Link>
-        <Link to="/reviews">Reviews</Link>
+        <Link onClick={handleShowMovieReviews}>Reviews</Link>
         <div className={css.line}></div>
         {showMovieCast && <MovieCast movie={movie} />}
+        {showMovieReviews && <MovieReviews movie={movie}/>}
       </div>
     </div>
   );
