@@ -8,7 +8,7 @@ export const MovieCastInfo = ({ movie }) => {
   return (
     <ul>
       {castActors.map(el => (
-        <li key={movie.id}>{el.name}</li>
+        <li key={el.id}>{el.name}</li>
       ))}
     </ul>
   );
