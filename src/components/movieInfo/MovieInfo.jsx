@@ -17,6 +17,10 @@ export const MovieInfo = ({ movie }) => {
         <p className={css.boldText}>Overview</p>
         <p>{movie.overview}</p>
         <p className={css.boldText}>Genres</p>
+        {movie.genres.map(genre =>
+          <ul className={css.genres} key={genre.id}>
+            <li>{genre.name}</li>
+          </ul>)}
         <p>{movie.genre_ids}</p>
       </div>
 

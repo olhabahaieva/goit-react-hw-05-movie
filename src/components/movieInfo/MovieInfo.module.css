@@ -26,3 +26,8 @@
     height: 1px;
     background-color: black;
 }
+
+.genres{
+  list-style: none;
+  padding-left: 0;
+}
