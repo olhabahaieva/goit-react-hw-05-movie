@@ -1,12 +1,11 @@
 import React from 'react';
+import css from './MovieCastInfo.module.css';
 
 export const MovieCastInfo = ({ movie }) => {
-  //   console.log(movie)
   const castActors = movie.cast;
-  console.log(castActors);
 
   return (
-    <ul>
+    <ul className={css.card}>
       {castActors.map(el => (
         <>
           <li key={el.id}>
@@ -14,7 +13,7 @@ export const MovieCastInfo = ({ movie }) => {
               src={`https://image.tmdb.org/t/p/w200/${el.profile_path}`}
               alt={el.name}
             />
-            <p>{el.name}</p>
+            <p className={css.boldText}>{el.name}</p>
             <p>{el.character}</p>
           </li>
         </>
