@@ -22,7 +22,7 @@ const Home = () => {
 
   return (
     <>
-      <TrendingMovieList onClick={onClick}/>;
+      <TrendingMovieList onClick={onClick}/>
       {movie && <MovieDetails movie={movie} />}
     </>
   );
