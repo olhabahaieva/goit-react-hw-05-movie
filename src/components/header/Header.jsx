@@ -5,9 +5,9 @@ import css from './Header.module.css';
 const Header = () => {
   return (
     <>
-      <header className={css.header}>
+      <header>
         <nav className={css.nav}>
-         <ul>
+         <ul className={css.menu}>
            <li>
               <NavLink className={css.link} to="/">
                 Home

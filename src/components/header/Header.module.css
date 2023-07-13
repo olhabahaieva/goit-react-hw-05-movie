@@ -1,14 +1,16 @@
-.header {
+.nav {
   width: 100%;
 }
 
-.nav {
+.menu {
+  margin-top: 0;
   display: flex;
   gap: 20px;
   padding: 20px 40px;
   -webkit-box-shadow: 0px 9px 12px -1px rgba(224, 224, 224, 1);
   -moz-box-shadow: 0px 9px 12px -1px rgba(224, 224, 224, 1);
   box-shadow: 0px 9px 12px -1px rgba(224, 224, 224, 1);
+  list-style:none
 }
 
 .link {
@@ -21,5 +23,5 @@
 
 .link:hover,
 .link:focus{
-    color: orange;
+    color: orangered;
 }
