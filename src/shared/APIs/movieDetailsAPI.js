@@ -7,7 +7,7 @@ export async function getMovieDetails(movieId) {
   try {
     // const controller = new AbortController();
     const response = await axios.get(
-      `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`,
+      `${BASE_URL}movie/${movieId}?api_key=${API_KEY}`,
       // { signal: controller.signal }
     );
 
