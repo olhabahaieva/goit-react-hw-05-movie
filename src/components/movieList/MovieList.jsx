@@ -1,7 +1,8 @@
 import MovieDetails from 'pages/movieDetails/MovieDetails';
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getMovieDetails } from 'shared/APIs/movieDetailsAPI';
+import getMovieDetails from 'shared/APIs/movieDetailsAPI';
+
 
 const MovieList = ({ movies }) => {
   const openRef = useRef(null);
