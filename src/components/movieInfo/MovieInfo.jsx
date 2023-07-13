@@ -5,8 +5,10 @@ export const MovieInfo = ({ movie }) => {
   return (
     <div>
       <div>
-        <img src={movie.poster_path} alt={movie.title} />
-
+        <img
+          src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`}
+          alt={movie.title}
+        />
         <h1>{movie.title}</h1>
         <p>{movie.vote_average}</p>
         <p>Overview</p>
