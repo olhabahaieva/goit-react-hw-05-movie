@@ -1,12 +1,13 @@
 import React from 'react';
+import css from './MovieReviews.module.css';
 
 const MovieReviewsInfo = ({ movie }) => {
   console.log(movie);
   return (
-    <ul>
+    <ul className={css.list}>
       {movie.map(el => (
         <li key={el.id}>
-          <p>{el.author}</p>
+          <p className={css.boldText}>{el.author}</p>
           <p>{el.content}</p>
         </li>
       ))}
