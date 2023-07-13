@@ -1,6 +1,6 @@
 import TrendingMovieList from 'modules/trendingMovieList/TrendingMovieList';
 import MovieDetails from 'pages/movieDetails/MovieDetails';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import getMovieDetails from 'shared/APIs/movieDetailsAPI';
 
@@ -8,7 +8,7 @@ const Home = () => {
   const [movie, setMovie] = useState();
   const { movieId } = useParams();
 
-  useEffect(() => {
+  const onClick = () => {
     async function getMovie() {
       try {
         const fetchedMovie = await getMovieDetails(movieId);
@@ -18,11 +18,11 @@ const Home = () => {
       }
     }
     getMovie();
-  }, [movieId]);
+  };
 
   return (
     <>
-      <TrendingMovieList />;
+      <TrendingMovieList onClick={onClick}/>;
       {movie && <MovieDetails movie={movie} />}
     </>
   );
