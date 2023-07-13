@@ -8,7 +8,16 @@ export const MovieCastInfo = ({ movie }) => {
   return (
     <ul>
       {castActors.map(el => (
-        <li key={el.id}>{el.name}</li>
+        <>
+          <li key={el.id}>
+            <img
+              src={`https://image.tmdb.org/t/p/w200/${el.profile_path}`}
+              alt={el.name}
+            />
+            <p>{el.name}</p>
+            <p>{el.character}</p>
+          </li>
+        </>
       ))}
     </ul>
   );
