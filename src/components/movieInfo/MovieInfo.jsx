@@ -40,8 +40,8 @@ export const MovieInfo = ({ movie }) => {
       <div className={css.info}>
         <div className={css.line}></div>
         <p>Additional Information</p>
-        <Link onClick={handleShowMovieCast}>Cast</Link>
-        <Link onClick={handleShowMovieReviews}>Reviews</Link>
+        <Link to="cast" onClick={handleShowMovieCast}>Cast</Link>
+        <Link to="reviews" onClick={handleShowMovieReviews}>Reviews</Link>
         <div className={css.line}></div>
         {showMovieCast && <MovieCast movie={movie} />}
         {showMovieReviews && <MovieReviews movie={movie}/>}
