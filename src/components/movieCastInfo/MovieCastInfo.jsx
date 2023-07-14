@@ -2,7 +2,7 @@ import React from 'react';
 import css from './MovieCastInfo.module.css';
 
 export const MovieCastInfo = ({ movie }) => {
-  const castActors = movie.cast;
+  const castActors =  movie.cast || [];
 
   return (
     <ul className={css.card}>
