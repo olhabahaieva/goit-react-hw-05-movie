@@ -11,7 +11,7 @@ async function getMovieCast(movieId) {
       // { signal: controller.signal }
     );
 
-    console.log(response.data.cast);
+    // console.log(response.data.cast);
     return response.data.cast;
   } catch (error) {
     console.log(error);
