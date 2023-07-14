@@ -4,6 +4,8 @@ import SharedLayout from 'shared/sharedLayout';
 import Movies from '../pages/movies';
 import Home from '../pages/home';
 import MovieDetails from 'pages/movieDetails/MovieDetails';
+import MovieCast from './movieCast/MovieCast';
+import MovieReviews from './movieReviews/MovieReviews';
 
 export const App = () => {
   return (
@@ -24,6 +26,8 @@ export const App = () => {
             <Route index element={<Home />} />
             <Route path="movies" element={<Movies />} />
             <Route path="movies/:movieId" element={<MovieDetails />} />
+            <Route path="movies/:movieId/cast" element={<MovieCast />} />
+            <Route path="movies/:movieId/reviews" element={<MovieReviews />} />
             <Route path="*" element={<div>Page not found</div>} />
           </Route>
         </Routes>
