@@ -32,7 +32,7 @@ const MovieList = ({ movies }) => {
       {loading && <p>Data is loading</p>}
       {filteredMovies.map(movie => (
         <li key={movie.id}>
-          <Link onClick={onClick} to={`${movie.id}`}>
+          <Link onClick={onClick} to={`/movies/${movie.id}`}>
             {movie.title}
           </Link>
         </li>

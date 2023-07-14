@@ -1,8 +1,7 @@
 import { getTrendingMovies } from 'shared/APIs/trendingMoviesAPI';
 import { useEffect, useState } from 'react';
 import MovieList from 'components/movieList/MovieList';
-import css from './TrendingMovieList'
-import MovieDetails from 'pages/movieDetails/MovieDetails';
+import css from './TrendingMovieList';
 import getMovieDetails from 'shared/APIs/movieDetailsAPI';
 import { useParams } from 'react-router-dom';
 
@@ -14,10 +13,10 @@ const TrendingMovieList = () => {
   const [loading, setLoading] = useState(false);
   // eslint-disable-next-line
   const [error, setError] = useState(false);
-
+  // eslint-disable-next-line
   const [movie, setMovie] = useState();
 
-  const onClick = async (movieId) => {
+  const onClick = async movieId => {
     try {
       const fetchedMovie = await getMovieDetails(movieId);
       setMovie(fetchedMovie);
@@ -52,8 +51,9 @@ const TrendingMovieList = () => {
       <h1 className={css.title}>Trending today</h1>
       {error && <p>Sorry, something went wrong</p>}
       {loading && <p>Data is loading</p>}
-      {movies.length > 0 && <MovieList movies={movies} onClick={() => onClick(movieId)}/>}
-        {movie && <MovieDetails movie={movie} />}
+      {movies.length > 0 && (
+        <MovieList movies={movies} onClick={() => onClick(movieId)} />
+      )}
     </div>
   );
 };
