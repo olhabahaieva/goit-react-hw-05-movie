@@ -20,7 +20,9 @@ export const MovieDetails = () => {
       try {
         const fetchedMovie = await getMovieDetails(movieId);
         setMovie(fetchedMovie);
-      } catch (error) {}
+      } catch (error) {
+        console.log(error)
+      }
     }
     getMovie();
   }, [movieId]);
