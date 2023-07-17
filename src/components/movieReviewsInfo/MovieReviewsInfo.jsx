@@ -1,5 +1,6 @@
 import React from 'react';
 import css from './MovieReviews.module.css';
+import PropTypes from 'prop-types';
 
 const MovieReviewsInfo = ({ movie }) => {
   // console.log(movie);
@@ -14,5 +15,9 @@ const MovieReviewsInfo = ({ movie }) => {
     </ul>
   );
 };
+
+MovieReviewsInfo.propTypes = {
+  movie: PropTypes.array,
+}
 
 export default MovieReviewsInfo;
