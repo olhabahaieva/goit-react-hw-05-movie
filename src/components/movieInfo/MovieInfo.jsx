@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import css from './MovieInfo.module.css';
 import MovieCast from 'components/movieCast/MovieCast';
 import MovieReviews from 'components/movieReviews/MovieReviews';
+import PropTypes from 'prop-types';
 
 export const MovieInfo = ({ movie }) => {
   const [showMovieCast, setShowMovieCast] = useState(false);
@@ -49,5 +50,9 @@ export const MovieInfo = ({ movie }) => {
     </div>
   );
 };
+
+MovieInfo.propTypes = {
+  movie: PropTypes.array,
+}
 
 export default MovieInfo;
