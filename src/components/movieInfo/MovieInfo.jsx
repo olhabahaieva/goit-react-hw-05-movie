@@ -52,7 +52,7 @@ export const MovieInfo = ({ movie }) => {
 };
 
 MovieInfo.propTypes = {
-  movie: PropTypes.array,
+  movie: PropTypes.object,
 }
 
 export default MovieInfo;
