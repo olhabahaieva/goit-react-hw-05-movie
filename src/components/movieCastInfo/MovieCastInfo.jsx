@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 export const MovieCastInfo = ({ movie }) => {
   const children = movie.map(el => (
     <li key={el.cast_id || el.id}>
-      <img
-        src={el.profile_path ? `https://image.tmdb.org/t/p/w200/${el.profile_path}` : myImage}
+      <img 
+        src={el.profile_path ? `https://image.tmdb.org/t/p/w200/${el.profile_path}` : myImage }
         alt={el.name}
       />
       <p className={css.boldText}>{el.name}</p>
