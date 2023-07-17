@@ -1,11 +1,18 @@
+import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import 'modern-normalize/modern-normalize.css';
 import SharedLayout from 'shared/sharedLayout';
-import Movies from '../pages/movies';
 import Home from '../pages/home';
-import MovieDetails from 'pages/movieDetails/MovieDetails';
-import MovieCast from './movieCast/MovieCast';
-import MovieReviews from './movieReviews/MovieReviews';
+
+// import Movies from '../pages/movies';
+// import MovieDetails from 'pages/movieDetails/MovieDetails';
+// import MovieCast from './movieCast/MovieCast';
+// import MovieReviews from './movieReviews/MovieReviews';
+
+const Movies = lazy(() => import('../pages/movies'));
+const MovieDetails = lazy(() => import('pages/movieDetails/MovieDetails'));
+const MovieCast = lazy(() => import('./movieCast/MovieCast'));
+const MovieReviews = lazy(() => import('./movieReviews/MovieReviews'));
 
 export const App = () => {
   return (
@@ -21,17 +28,22 @@ export const App = () => {
           color: '#010101',
         }}
       >
-        <Routes>
-          <Route path="/" element={<SharedLayout />}>
-            <Route index element={<Home />} />
-            <Route path="movies" element={<Movies />} />
-            <Route path="movies/:movieId" element={<MovieDetails />}>
-              <Route path="cast" element={<MovieCast />} />
-              <Route path="reviews" element={<MovieReviews />} />
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Routes>
+            <Route path="/" element={<SharedLayout />}>
+              <Route index element={<Home />} />
+
+              <Route path="movies" element={<Movies />} />
+
+              <Route path="movies/:movieId" element={<MovieDetails />}>
+                <Route path="cast" element={<MovieCast />} />
+                <Route path="reviews" element={<MovieReviews />} />
+              </Route>
+
+              <Route path="*" element={<div>Page not found</div>} />
             </Route>
-            <Route path="*" element={<div>Page not found</div>} />
-          </Route>
-        </Routes>
+          </Routes>
+        </Suspense>
       </div>
     </>
   );
