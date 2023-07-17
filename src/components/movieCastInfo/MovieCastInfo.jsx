@@ -1,6 +1,7 @@
 import React from 'react';
 import css from './MovieCastInfo.module.css';
 import myImage from 'images/myImage.jpg';
+import PropTypes from 'prop-types';
 
 export const MovieCastInfo = ({ movie }) => {
   const children = movie.map(el => (
@@ -15,5 +16,9 @@ export const MovieCastInfo = ({ movie }) => {
   ));
   return <ul className={css.card}>{children}</ul>;
 };
+
+MovieCastInfo.propTypes = {
+  movie: PropTypes.array,
+}
 
 export default MovieCastInfo;
